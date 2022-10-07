@@ -25,18 +25,18 @@ Now is time to download\clone or whatever you want to get the source code of thi
 3. Replace `TOKEN_BOT` (token var) with the authorization token returned by @BotFather
 4. Replace `RemoteControl` with the name of your bot (or what do you prefere, is not so important)
 5. Start your bot with `node bot` (for the first setup we will just run the server one time, after we will use PM2)
-4. Search and add your bot on your Telegram web\software\app and send him the command `/myid`
-5. Now get the number returned by the bot and put it in `USER_ID`. This is your telegram unique id used by bot for send you messages and authenticate your commands.
+6. Search and add your bot on your Telegram web\software\app and send him the command `/myid`
+7. Now get the number returned by the bot and put it in `USER_ID`. This is your telegram unique id used by bot for send you messages and authenticate your commands.
 **NOTE:** only you (authenticated by the unique id just entered) are able to send command and get notification from bot.
-6. Now all is ready, you can turn of the bot and continue to the steps.
+8. Now all is ready, you can turn of the bot and continue to the steps.
 
-This is a brief tutorial on how let the bot start automatically on Raspberry Pi bootup.
+This is a brief tutorial on how let the bot start automatically on Raspberry Pi bootup:
 
-7. Install PM2, a production process manager to keep your application alive forever. Use `sudo npm install -g pm2`
-8. Start the bot with the command `pm2 start bot.js`
-9. PM2 can generate and configure a startup script to keep PM2 and your processes alive at every server restart. `Use pm2 startup` for generate the script.
-10. Be sure your bot is up with PM2 with `pm2 list`; you should see a row with bot.js (or something like) and status online.
-11. Now use `pm2 save` for save the process list so PM2 will start the bot on restart.
+1. Install PM2, a production process manager to keep your application alive forever. Use `sudo npm install -g pm2`
+2. Start the bot with the command `pm2 start bot.js`
+3. PM2 can generate and configure a startup script to keep PM2 and your processes alive at every server restart. `Use pm2 startup` for generate the script.
+4. Be sure your bot is up with PM2 with `pm2 list`; you should see a row with bot.js (or something like) and status online.
+5. Now use `pm2 save` for save the process list so PM2 will start the bot on restart or create systemd service <code>bot-remotecontrol.service</code>.
 
 
 ## Command list.
