@@ -1,0 +1,14 @@
+[Unit]
+Description=Remote Control Bot Telegram
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/local/bin/node /opt/remotecontrol-bot/bot.js
+
+[Install]
+WantedBy=multi-user.target
