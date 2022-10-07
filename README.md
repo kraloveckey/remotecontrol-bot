@@ -1,10 +1,10 @@
-#remotecontrol-bot
+# remotecontrol-bot
 
 This is a simple Telegram bot written on JavaScript for remote check (Temperatures\CPU\Disk usage\Memory etc.) and control (launch commands) Raspberry Pi. Is just a simple bot base easly expandable with several new commands.
 
 Support commands and auto-notify. When the Node.js bot will go up (example. after reboot) the bot will notify you with a message.
 
-##Setup
+## Setup.
 
 First of all install Node.js on your Linux (if not yet installed or upgraded by you):
 
@@ -26,10 +26,11 @@ Now is time to download\clone or whatever you want to get the source code of thi
 4. Replace `RemoteControl` with the name of your bot (or what do you prefere, is not so important)
 5. Start your bot with `node bot` (for the first setup we will just run the server one time, after we will use PM2)
 4. Search and add your bot on your Telegram web\software\app and send him the command `/myid`
-5. Now get the number returned by the bot and put it in `USER_ID`. This is your telegram unique id used by bot for send you messages and authenticate your commands. **NOTE** Only you (authenticated by the unique id just entered) are able to send command and get notification from bot.
+5. Now get the number returned by the bot and put it in `USER_ID`. This is your telegram unique id used by bot for send you messages and authenticate your commands.
+**NOTE:** only you (authenticated by the unique id just entered) are able to send command and get notification from bot.
 6. Now all is ready, you can turn of the bot and continue to the steps.
 
-This is a brief tutorial on how let the bot start automatically on Raspi bootup.
+This is a brief tutorial on how let the bot start automatically on Raspberry Pi bootup.
 
 7. Install PM2, a production process manager to keep your application alive forever. Use `sudo npm install -g pm2`
 8. Start the bot with the command `pm2 start bot.js`
@@ -38,7 +39,7 @@ This is a brief tutorial on how let the bot start automatically on Raspi bootup.
 11. Now use `pm2 save` for save the process list so PM2 will start the bot on restart.
 
 
-##Command list
+## Command list.
 
 Currently supported bot commands:
 
@@ -58,7 +59,7 @@ Currently supported bot commands:
 - `/shutdown` - Shutdown your Pi.
 
 
-##How to add your command
+## How to add your command.
 
 Just insert a new command at the end of the file in bot.js following this snippet:
 
@@ -77,7 +78,7 @@ Use `send(message, msg.chat.id)` inside your command code for send a message. In
 
 You can use the send function outside the command snippet of code; example: `send("Hello!", AUTHID)`, `AUTHID` is the variable with your unique id. In this case the bot will send a message to you.
 
-##Example#. How to add a number (with 2 digit) parameter
+## Example: how to add a number (with 2 digit) parameter.
 
 ```
 bot.onText(/^\/mycommand (\d{2})$/, function (msg, match) {
@@ -91,6 +92,6 @@ bot.onText(/^\/mycommand (\d{2})$/, function (msg, match) {
 
 In the `match` array you will find all your parameters (ignore match[0] is the textual part of the command).
 
-##Packages used
+## Packages used
 
 This bot uses `node-telegram-bot-api`. You can find the documentation on https://github.com/yagop/node-telegram-bot-api.
