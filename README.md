@@ -1,16 +1,22 @@
 # remotecontrol-bot
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kraloveckey)
+
+[![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/cyber_notes)
+
+---
+
 This is a simple Telegram bot written on JavaScript for remote check (Temperatures\CPU\Disk usage\Memory etc.) and control (launch commands) Raspberry Pi. Is just a simple bot base easly expandable with several new commands.
 
 Support commands and auto-notify. When the Node.js bot will go up (example. after reboot) the bot will notify you with a message.
 
-## Setup.
+## Setup
 
 First of all install Node.js on your Linux (if not yet installed or upgraded by you):
 
-1. Use the following terminal commands for install the latest Node.js version (more on nodesource https://github.com/nodesource/distributions)
+1. Use the following terminal commands for install the latest Node.js version (more on nodesource `https://github.com/nodesource/distributions`)
 
-```
+```shell
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
@@ -21,7 +27,7 @@ sudo apt-get install -y build-essential
 Now is time to download\clone or whatever you want to get the source code of this bot. Enter the bot source code folder and start with the following steps!
 
 1. Install dependencies with `npm install`
-2. Create your personal Telegram bot following these instructions: https://core.telegram.org/bots#botfather (point 6. BotFather)
+2. Create your personal Telegram bot following these instructions: `https://core.telegram.org/bots#botfather` (point 6. BotFather)
 3. Replace `TOKEN_BOT` (token var) with the authorization token returned by @BotFather
 4. Replace `RemoteControl` with the name of your bot (or what do you prefere, is not so important)
 5. Start your bot with `node bot` (for the first setup we will just run the server one time, after we will use PM2)
@@ -39,7 +45,7 @@ This is a brief tutorial on how let the bot start automatically on Raspberry Pi 
 5. Now use `pm2 save` for save the process list so PM2 will start the bot on restart or create systemd service <code>bot-remotecontrol.service</code>.
 
 
-## Command list.
+## Command list
 
 Currently supported bot commands:
 
@@ -59,11 +65,11 @@ Currently supported bot commands:
 - `/shutdown` - Shutdown your Pi.
 
 
-## How to add your command.
+## How to add your command
 
 Just insert a new command at the end of the file in bot.js following this snippet:
 
-```
+```shell
 bot.onText(/^\/mycommand$/, function (msg, match) {
 	if(msg.chat.id == AUTHID){
     //insert here your command code
@@ -72,13 +78,13 @@ bot.onText(/^\/mycommand$/, function (msg, match) {
 });
 ```
 
-Use Javascript Regular expression (like `/^\/mycommand$/`) for parse your command and your parameters (if any). In the snippet example the regex will recognize the command `/mycommand`. Some usefull regex guide on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+Use Javascript Regular expression (like `/^\/mycommand$/`) for parse your command and your parameters (if any). In the snippet example the regex will recognize the command `/mycommand`. Some usefull regex guide on `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions`.
 
 Use `send(message, msg.chat.id)` inside your command code for send a message. In this case `msg.chat.id` is the id of who sent you the command.
 
 You can use the send function outside the command snippet of code; example: `send("Hello!", AUTHID)`, `AUTHID` is the variable with your unique id. In this case the bot will send a message to you.
 
-## Example: how to add a number (with 2 digit) parameter.
+## Example: how to add a number (with 2 digit) parameter
 
 ```
 bot.onText(/^\/mycommand (\d{2})$/, function (msg, match) {
@@ -94,4 +100,4 @@ In the `match` array you will find all your parameters (ignore match[0] is the t
 
 ## Packages used
 
-This bot uses `node-telegram-bot-api`. You can find the documentation on https://github.com/yagop/node-telegram-bot-api.
+This bot uses `node-telegram-bot-api`. You can find the documentation on `https://github.com/yagop/node-telegram-bot-api`.
