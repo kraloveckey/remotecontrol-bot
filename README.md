@@ -2,8 +2,6 @@
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kraloveckey)
 
-[![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/cyber_notes)
-
 ---
 
 This is a simple Telegram bot written on JavaScript for remote check (Temperatures\CPU\Disk usage\Memory etc.) and control (launch commands) Raspberry Pi. Is just a simple bot base easly expandable with several new commands.
