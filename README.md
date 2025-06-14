@@ -1,9 +1,5 @@
 # remotecontrol-bot
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kraloveckey)
-
----
-
 This is a simple Telegram bot written on JavaScript for remote check (Temperatures\CPU\Disk usage\Memory etc.) and control (launch commands) Raspberry Pi. Is just a simple bot base easly expandable with several new commands.
 
 Support commands and auto-notify. When the Node.js bot will go up (example. after reboot) the bot will notify you with a message.
@@ -99,3 +95,9 @@ In the `match` array you will find all your parameters (ignore match[0] is the t
 ## Packages used
 
 This bot uses `node-telegram-bot-api`. You can find the documentation on `https://github.com/yagop/node-telegram-bot-api`.
+
+---
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=GWWLEXEF3XL92">
+  <img src="https://raw.githubusercontent.com/kraloveckey/kraloveckey/refs/heads/main/.assets/paypal-donate-button.png" alt="Donate with PayPal" width="225" height="100"/>
+</a>
